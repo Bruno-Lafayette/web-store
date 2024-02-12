@@ -1,0 +1,110 @@
+{
+    "produtos": [
+      {
+        "id": 1,
+        "nome": "Hambúrguer",
+        "descricao": "Pão, bife de hambúrguer 90g, salada e batata.",
+        "preco": 8.5,
+        "image": "https://img.freepik.com/fotos-gratis/foto-de-delicioso-hamburguer-isolado-no-fundo-branco_125540-3378.jpg",
+        "categoria_id": 1
+      },
+      {
+        "id": 2,
+        "nome": "X-Búrguer",
+        "descricao": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, salada e batata.",
+        "preco": 10.5,
+        "image": "https://delivery2.mileniodigital.com.br/wp-content/uploads/2021/06/x-salada.jpg",
+        "categoria_id": 1
+      },
+      {
+        "id": 3,
+        "nome": "X-Bacon",
+        "descricao": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, 2 fatia de bacon, salada e batata.",
+        "preco": 12.5,
+        "image": "https://imagens.jotaja.com/produtos/2528/ED4B8AE93BE15F3EC3608630AF9847A6A38A4F5A179CA8ED80D766BABD3BBF4C.jpeg",
+        "categoria_id": 1
+      },
+      {
+        "id": 4,
+        "nome": "X-Tudo",
+        "descricao": "Pão, 2 bifes de hambúrguer 90g, 2 fatias de queijo, 4 fatias de bacon, salada e batata.",
+        "preco": 14.5,
+        "image": "https://storage.googleapis.com/domain-images/daa9c855-3149-4d13-8da1-fcf5712742e4/products/gallery_1f302ebc-146e-485e-8cf3-d301deda2fae.jpg",
+        "categoria_id": 1
+      },
+      {
+        "id": 7,
+        "nome": "Queijo quente",
+        "descricao": " Fatias de pão de forma ou brioche, 4 Fatias de queijo mussarela, 4 Fatias de queijo prato (ou cheddar), 1 Colher (sopa) de manteiga",
+        "preco": 12.5,
+        "image": "https://img.saborosos.com.br/imagens/queijo-quente.jpg",
+        "categoria_id": 1
+      },
+      {
+        "id": 8,
+        "nome": "Misto quente",
+        "descricao": "Pão, bife de hambúrguer 90g, 1 fatia de queijo, salada e batata.",
+        "preco": 10.5,
+        "image": "https://www.sabornamesa.com.br/media/k2/items/cache/f863e4fb1b47b206b2276d9b70a5b183_XL.jpg",
+        "categoria_id": 1
+      },
+      {
+        "id": 9,
+        "nome": "Hot-Dog",
+        "descricao": "Pão, salsicha, Batatinhas, salada e mais batata e tudo mais que você tem direito.",
+        "preco": 12.5,
+        "image": "https://t3.ftcdn.net/jpg/02/81/37/90/360_F_281379065_Na6UBRImfR8OGxjd5PM7XcgSEUo35VBJ.jpg",
+        "categoria_id": 1
+      },
+      {
+        "id": 10,
+        "nome": "Hot-Dog Duplo",
+        "descricao": "Pão, salsicha, Batatinhas, salada e mais batata e tudo mais que você tem direito. Pão, salsicha, Batatinhas, salada e mais batata e tudo mais que você tem direito. Isso mesmo, tudo em dobro",
+        "preco": 14.5,
+        "image": "https://panutti.com.br/resize/imagecache//86e8c1c346b52b2445bec1f821c2724d.JPG",
+        "categoria_id": 1
+      },
+      {
+        "id": 5,
+        "nome": "Coca cola 350ml",
+        "descricao": "",
+        "preco": 5.5,
+        "image": "https://a-static.mlcdn.com.br/450x450/refrigerante-coca-cola-em-lata-300-ml/dunortesorveteriaeacaiteria/9a2ef9040ed611ee9ba34201ac185049/43f442a2629eac5caeae45b765a0ffeb.jpeg",
+        "categoria_id": 2
+      },
+      {
+        "id": 6,
+        "nome": "Coca cola 600ml",
+        "descricao": "",
+        "preco": 7.5,
+        "image": "https://loja.supermerclick.com.br/image/cache/catalog/produtos-integracao/004322-omie___coca-cola-600ml__conv-1000x1000.jpg",
+        "categoria_id": 2
+      },
+      {
+        "id": 11,
+        "nome": "Fanta Laranja 350ml",
+        "descricao": "",
+        "preco": 5.5,
+        "image": "https://denorteasulburguer.com.br/wp-content/uploads/2023/03/fanta-laranja.png",
+        "categoria_id": 2
+      },
+      {
+        "id": 12,
+        "nome": "Fanta 600ml",
+        "descricao": "",
+        "preco": 7.5,
+        "image": "https://mercantilnovaera.vtexassets.com/arquivos/ids/184023/Refrigerante-FANTA-Laranja-Garrafa-1L.jpg?v=637637836526700000",
+        "categoria_id": 2
+      }
+    ],
+    "categorias": [
+      {
+        "id": 1,
+        "nome": "Hambúrgueres"
+      },
+      {
+        "id": 2,
+        "nome": "Refrigerantes"
+      }
+    ]
+  }
