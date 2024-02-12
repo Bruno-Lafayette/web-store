@@ -1,0 +1,79 @@
+.header{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#containerList{
+    overflow:scroll;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 100%;
+}
+
+#productName{
+    width: 40%;
+}
+
+#unitaryPrice{
+    display: flex;
+    align-items: center;
+    width: 10%;
+}
+
+#totalPrice{
+    width: 20%;
+}
+
+#qtd{
+    width: 5% ;
+}
+
+.row{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.row h2 {
+    width: 40%;
+}
+
+.row p{
+    width: 10%;
+    display: flex;
+    text-align: left;
+}
+
+.row input {
+    width: 5%;
+}
+
+.price {
+    font-size:xx-large;
+    font-weight: bolder;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.listNull{
+    font-size: x-large;
+    color: gray;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.header p{
+    font-weight: 600;
+    color: gray;
+    font-size: larger;
+}

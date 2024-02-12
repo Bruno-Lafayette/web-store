@@ -1,0 +1,17 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: rgb(240, 240, 240);
+}
+
+.navbar ul {
+    display: flex;
+    gap: 1rem;
+}
+
+.navbar li {
+    font-size: 32px;
+}
+
