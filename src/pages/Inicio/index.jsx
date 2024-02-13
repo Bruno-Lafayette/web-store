@@ -1,35 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Inicio.css'
 import { MdAddShoppingCart } from "react-icons/md";
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import productFech from '../../axios/config';
-// import {insertProduct} from '../Carrinho/index';
 import Modal from '../../components/Modal/Modal';
 import ModalDetalhes from '../../components/Modal/Modal'
 import {useProduct} from '../../hooks/useProduct';
+import { useFetch } from '../../hooks/useFetch';
 
 const Inicio = () => {
 
-    const [products, setProducts] = useState([])
     const [openModal, setOpenModal] = useState(false)
     const [openModalDetalhes, setOpenModalDetalhes] = useState(false)
     const [detailProduct, setDetailProduct] = useState([])
     const {addProduct} = useProduct()
 
-
-    const getProducts = async() => {
-        try {
-            const response = await productFech.get('/produtos') 
-            const data = response.data
-            setProducts(data)
-        } catch (e) {
-            console.log(e)       
-        }
-    }
-    useEffect( () => {
-        getProducts()
-    }, [])
+    const products = useFetch('/produtos')
 
     return (
         <div >
@@ -45,7 +30,7 @@ const Inicio = () => {
                 <p className="title">{detailProduct.nome}</p>
                 <p className="msgModal">{detailProduct.descricao}</p>
                 <button onClick={() => {
-                            const response = insertProduct(detailProduct)
+                            const response = addProduct({item: detailProduct})
                             setOpenModal(response)
                             setOpenModalDetalhes(!openModalDetalhes)
                         } }><MdAddShoppingCart/></button>
@@ -64,13 +49,9 @@ const Inicio = () => {
                             setOpenModalDetalhes(true)
                             setDetailProduct(product)
                         }}>Detalhes</button>
-                        <button onClick={() => {
-                            
+                        <button onClick={() => {           
                             const response = addProduct({item :product})
-                            console.log(response)
                             setOpenModal(response)
-                            // const response = insertProduct(product)
-                            // setOpenModal(response)
                         } }><MdAddShoppingCart/></button>
                     </div>
                 </div>

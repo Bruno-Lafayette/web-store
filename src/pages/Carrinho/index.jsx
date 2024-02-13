@@ -40,7 +40,7 @@ const Carrinho = () => {
           {
             products.length === 0 ? <p className='listNull'>Nenhum produto adicionado</p> : (
               products.map((product) => (
-                <div className="row">
+                <div className="row" key={product.id}>
                   <h2>{product.nome}</h2>
                   <input
                     type="number"
