@@ -1,28 +1,12 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { MdRemoveShoppingCart } from "react-icons/md";
 import './Carrinho.css';
-import useProduct from '../../hooks/useProduct';
-
-const products = []
-
-export const insertProduct = (item) => {
-  let index = products.findIndex(product => product.id === item.id)
-  if (index < 0){
-    products.push(item)
-    return true
-  } else {
-    return false
-  }
-}
-
-const removeProduct = (item) => {
-    products(prevProducts => prevProducts.filter(product => product.id !== item.id));
-}
+import { useProduct } from '../../hooks/useProduct';
 
 const Carrinho = () => {
 
     const [quantities, setQuantities] = useState({});
+    const { products, removeProduct } = useProduct()
 
     const handleQuantityChange = (productId, quantity) => {
       setQuantities(prevState => ({
@@ -41,7 +25,7 @@ const Carrinho = () => {
     };
 
     return (
-      <div>
+      <>
         <h1>Carrinho</h1>
          { products.length === 0 ? '' : (
          <div className='header'>
@@ -52,7 +36,6 @@ const Carrinho = () => {
         </div>
         )}
         <div>
-
           <div id='containerList'>
           {
             products.length === 0 ? <p className='listNull'>Nenhum produto adicionado</p> : (
@@ -66,7 +49,7 @@ const Carrinho = () => {
                   />
                   <p>R${product.preco.toFixed(2)}</p>
                   <p>R${((quantities[product.id] || 1) * product.preco).toFixed(2)}</p>
-                  <button onClick={() => removeProduct(product)}><MdRemoveShoppingCart/></button>
+                  <button onClick={() => removeProduct({item : product})}><MdRemoveShoppingCart/></button>
                 </div>
               ))
             )
@@ -78,7 +61,7 @@ const Carrinho = () => {
             }
           </div>
         </div>
-      </div>
+      </>
     )
 }
 

@@ -14,7 +14,6 @@ const Modal = ({isOpen, setModalClose, children}) => {
                     </div>
                     {children}
                 </div>
-
             </div>
         )
     } else {

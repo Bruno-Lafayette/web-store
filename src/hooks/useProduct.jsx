@@ -1,29 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 
-// Implementar Hook para isolar responsabilidade do carrinho de exibir e fazer as alterações na lista de produtos
+const ProductContext = React.createContext()
 
-const useProduct = ({addProduct, removeProduct, getListProduct, productID})=> {
-    const [ product, setProduct] = useState([])
+export const useProduct = () => React.useContext(ProductContext)
 
-    if(getListProduct){
+export const ProductProvider = ({children}) => {
+    const [ products, setProduct] = React.useState([])
 
+    const addProduct = ({ item }) => {
+      console.log(item)
+      const index = products.findIndex(product => product.id === item.id);
+      console.log(index)
+      if (index < 0) {
+          setProduct(prevProducts => [...prevProducts, item]);
+          return true; 
+      } else {
+          return false; 
+      }
     }
-        
-    if(addProduct){
-        let index = products.findIndex(product => product.id === productID.id)
-        if (index < 0){
-            setProduct.push(item)
-          return true
-        } else {
-          return false
-        }
+    const removeProduct = ({item}) => {
+        setProduct(prevProducts => prevProducts.filter(product => product.id !== item.id));
     }
-
-    if(removeProduct){
-        setProduct(prevProducts => prevProducts.filter(product => product.id !== productID.id));
-    }
-
-
+    return (
+      <ProductContext.Provider value={{ products, addProduct, removeProduct }}>
+        {children}
+      </ProductContext.Provider>
+  );
 }
-
-export default useProduct
