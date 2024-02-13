@@ -7,11 +7,17 @@ import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 //Páginas
 import Inicio from './pages/Inicio/index'
 import Carrinho from './pages/Carrinho/index'
+import { ProductProvider } from './hooks/useProduct'
 
 
 const router = createBrowserRouter([
   {
-    element:<App />,
+    
+    element:(
+    <ProductProvider>
+        <App />
+    </ProductProvider>  
+    ),
     children:[
       {
         path: '/',

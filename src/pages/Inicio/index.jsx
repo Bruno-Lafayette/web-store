@@ -4,10 +4,10 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import productFech from '../../axios/config';
-import {insertProduct} from '../Carrinho/index';
+// import {insertProduct} from '../Carrinho/index';
 import Modal from '../../components/Modal/Modal';
 import ModalDetalhes from '../../components/Modal/Modal'
-import useProduct from '../../hooks/useProduct';
+import {useProduct} from '../../hooks/useProduct';
 
 const Inicio = () => {
 
@@ -15,6 +15,7 @@ const Inicio = () => {
     const [openModal, setOpenModal] = useState(false)
     const [openModalDetalhes, setOpenModalDetalhes] = useState(false)
     const [detailProduct, setDetailProduct] = useState([])
+    const {addProduct} = useProduct()
 
 
     const getProducts = async() => {
@@ -64,8 +65,12 @@ const Inicio = () => {
                             setDetailProduct(product)
                         }}>Detalhes</button>
                         <button onClick={() => {
-                            const response = insertProduct(product)
+                            
+                            const response = addProduct({item :product})
+                            console.log(response)
                             setOpenModal(response)
+                            // const response = insertProduct(product)
+                            // setOpenModal(response)
                         } }><MdAddShoppingCart/></button>
                     </div>
                 </div>
