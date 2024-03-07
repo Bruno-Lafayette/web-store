@@ -1,5 +1,4 @@
 import "./modal.css";
-import { Link } from 'react-router-dom'
 import { CgCloseO } from "react-icons/cg";
 
 

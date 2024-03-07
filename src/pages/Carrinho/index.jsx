@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { MdRemoveShoppingCart } from "react-icons/md";
 import './Carrinho.css';
 import { useProduct } from '../../hooks/useProduct';
+import Modal from '../../components/Modal/Modal';
+
 
 const Carrinho = () => {
 
-    const [quantities, setQuantities] = useState({});
-    const { products, removeProduct } = useProduct()
+    const [quantities, setQuantities] = useState({})
+    const [openModal, setOpenModal] = useState(false)
+    const { products, removeProduct, removeAllProducts } = useProduct()
 
     const handleQuantityChange = (productId, quantity) => {
       setQuantities(prevState => ({
@@ -26,6 +29,34 @@ const Carrinho = () => {
 
     return (
       <>
+        <Modal isOpen={openModal} setModalClose={() => {setOpenModal(!openModal), removeAllProducts()}} children={(
+            <div> 
+                <p className="title">Compra finalizada com Sucesso</p>
+                <div className='containerNF'>
+                  {products.map(product => (
+                      <div key={product.id} className='containerNFKey'>
+                          <div>
+                            <p >{product.nome}</p>
+                          </div>
+                        <div className='containerPriceNF'>
+                          <div>
+                            <p >quantidade {(quantities[product.id] || 1)} |</p>
+                          </div>
+                          <div>
+                            <p>|  ----- valor unitário R${product.preco.toFixed(2)} -----  |</p>
+                          </div>
+                          <div>
+                          <p>| Subtotal: R${(product.preco * (quantities[product.id] || 1)).toFixed(2)}</p>
+                          </div>
+                        </div>
+                        <hr />
+                      </div>
+                  ))}
+                </div>
+                <p className="msgModal">Valor total do pedido: R${getSubtotal().toFixed(2)}</p>
+            </div>
+
+        )}/>
         <h1>Carrinho</h1>
          { products.length === 0 ? '' : (
          <div className='header'>
@@ -55,9 +86,17 @@ const Carrinho = () => {
             )
           }
           </div>
-          <div className="price">
+          <div className="containerPrice">
             {
-              products.length === 0 ? '': <p>Total: R${getSubtotal().toFixed(2)}</p>
+              products.length === 0 ? '': (
+              <div>
+                <p>Total: R${getSubtotal().toFixed(2)}</p>
+                <button
+                onClick={() => {
+                  setOpenModal(true)}}
+                >Finalizar compra</button>
+              </div>
+              )
             }
           </div>
         </div>

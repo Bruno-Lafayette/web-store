@@ -20,9 +20,13 @@ export const ProductProvider = ({children}) => {
     const removeProduct = ({item}) => {
         setProduct(prevProducts => prevProducts.filter(product => product.id !== item.id));
     }
+
+    const removeAllProducts = () => {
+      setProduct([])
+    }
     
     return (
-      <ProductContext.Provider value={{ products, addProduct, removeProduct }}>
+      <ProductContext.Provider value={{ products, addProduct, removeProduct, removeAllProducts }}>
         {children}
       </ProductContext.Provider>
   );

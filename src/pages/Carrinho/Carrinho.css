@@ -5,10 +5,11 @@
 }
 
 #containerList{
-    overflow:scroll;
+    overflow-y:scroll;
+	overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: 300px;
     width: 100%;
 }
 
@@ -53,12 +54,27 @@
     width: 5%;
 }
 
-.price {
-    font-size:xx-large;
+.containerPrice {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.containerPrice p{
+    font-size: x-large;
     font-weight: bolder;
     width: 100%;
     display: flex;
     justify-content: end;
+}
+
+.containerPrice button{
+    font-size:medium;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
 }
 
 .listNull{
@@ -76,4 +92,28 @@
     font-weight: 600;
     color: gray;
     font-size: larger;
+}
+
+.containerNF{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    height: 200px;
+	overflow-y:scroll;
+    overflow-x: hidden; 
+}
+
+.containerNF p{
+    margin: 4px;
+}
+
+.containerPriceNF{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.containerNFKey {
+    width: 100%;
 }
