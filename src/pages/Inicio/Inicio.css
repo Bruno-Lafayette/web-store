@@ -1,6 +1,6 @@
 .containerCards {
 	overflow:scroll;
-	height: 70vh;
+	height: 68vh;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -34,7 +34,7 @@
 }
 
 .card img{
-	height: 200px;
+	height: 120px;
 	max-width: 240px;
 	width: auto;
 }

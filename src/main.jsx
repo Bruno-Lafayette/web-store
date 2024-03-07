@@ -7,12 +7,13 @@ import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
 //Páginas
 import Inicio from './pages/Inicio/index'
 import Carrinho from './pages/Carrinho/index'
+import ErrorPage from './pages/Error/ErrorPage'
 import { ProductProvider } from './hooks/useProduct'
 
 
 const router = createBrowserRouter([
   {
-    
+    errorElement: <ErrorPage />,
     element:(
     <ProductProvider>
         <App />
@@ -26,7 +27,6 @@ const router = createBrowserRouter([
       {
         path: '/carrinho',
         element: <Carrinho />
-
       }
     ]
   }
